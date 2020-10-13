@@ -71,15 +71,12 @@ let $ = createSnippetWithJQuery(`
 
 const templatingWithMustache = () => {
   // Solution code here...
-  let tempChar = {
-    name: characters.name,
-    spouse: characters.spouse,
-    children: characters.children,
-    house: characters.house
-  };
-  let $template = $('#template').html();
-  let rendered = Mustache.render($template, tempChar);
-  $(`<sectio>${rendered}</section>`);
+  let arr = [];
+  characters.forEach((peeps) => {
+    let $template = $('#template').html();
+    let rendered = Mustache.rendere($template, peeps);
+    arr.push(rendered);
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -89,13 +86,19 @@ Write a function named getCourseKeys that takes in the courseInfo charactersect 
 
 For example: (['name', 'duration', 'topics', 'finalExam']).
 ------------------------------------------------------------------------------------------------ */
-const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningTrack: '8 weeks'},
+const courseInfo = {
+  name: 'Code 301', duration: { dayTrack: '4 weeks', eveningTrack: '8 weeks' },
   topics: ['SMACSS', 'APIs', 'NodeJS', 'SQL', 'jQuery', 'functional programming'],
   finalExam: true
 };
 
-const getCourseKeys = (characters) => {
+const getCourseKeys = (obj) => {
   // Solution code here...
+  let arr = [];
+  for (let property in obj) {
+    arr.push(property);
+  }
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -107,6 +110,9 @@ Write a function named getHouses that returns a new array containing the names o
 const getHouses = (arr) => {
   let houses = [];
   // Solution code here...
+  for (let i = 0; i < characters.length; i++) {
+    houses.push(characters.house);
+  }
   return houses;
 };
 
@@ -261,6 +267,6 @@ xdescribe('Testing challenge 8', () => {
 });
 
 
-function createSnippetWithJQuery(html){
+function createSnippetWithJQuery(html) {
   return cheerio.load(html);
 }
