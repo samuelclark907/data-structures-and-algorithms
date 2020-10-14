@@ -71,15 +71,13 @@ let $ = createSnippetWithJQuery(`
 
 const templatingWithMustache = () => {
   // Solution code here...
-  let tempChar = {
-    name: characters.name,
-    spouse: characters.spouse,
-    children: characters.children,
-    house: characters.house
-  };
-  let $template = $('#template').html();
-  let rendered = Mustache.render($template, tempChar);
-  $(`<sectio>${rendered}</section>`);
+  let arr = [];
+  characters.forEach((peeps) => {
+    let $template = $('#template').html();
+    let rendered = Mustache.render($template, peeps);
+    arr.push(rendered);
+  });
+  return (arr);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -89,13 +87,19 @@ Write a function named getCourseKeys that takes in the courseInfo charactersect 
 
 For example: (['name', 'duration', 'topics', 'finalExam']).
 ------------------------------------------------------------------------------------------------ */
-const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningTrack: '8 weeks'},
+const courseInfo = {
+  name: 'Code 301', duration: { dayTrack: '4 weeks', eveningTrack: '8 weeks' },
   topics: ['SMACSS', 'APIs', 'NodeJS', 'SQL', 'jQuery', 'functional programming'],
   finalExam: true
 };
 
-const getCourseKeys = (characters) => {
+const getCourseKeys = (obj) => {
   // Solution code here...
+  let arr = [];
+  for (let property in obj) {
+    arr.push(property);
+  }
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -107,6 +111,9 @@ Write a function named getHouses that returns a new array containing the names o
 const getHouses = (arr) => {
   let houses = [];
   // Solution code here...
+  arr.forEach((peep) => {
+    houses.push(peep.house);
+  });
   return houses;
 };
 
@@ -124,7 +131,15 @@ hasChildrenValues(characters, 'Sansa') will return false
 
 const hasChildrenValues = (arr, character) => {
   // Solution code here...
-
+  let kids = false;
+  Object.values(arr).forEach((val) => {
+    if (val.name === character) {
+      if (val.children.length > 0) {
+        kids = true;
+      }
+    }
+  });
+  return kids;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -208,20 +223,20 @@ describe('Testing challenge 1', () => {
   });
 });
 
-xdescribe('Testing challenge 2', () => {
+describe('Testing challenge 2', () => {
   test('It should return the keys from an charactersect', () => {
     expect(getCourseKeys(courseInfo)).toStrictEqual(['name', 'duration', 'topics', 'finalExam']);
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should return an array of the names of the houses', () => {
     expect(getHouses(characters)).toStrictEqual(['Stark', 'Arryn', 'Lannister', 'Targaryen', 'Tyrell', 'Greyjoy', 'Snow']);
     expect(getHouses(characters).length).toStrictEqual(7);
   });
 });
 
-xdescribe('Testing challenge 4', () => {
+describe('Testing challenge 4', () => {
   test('It should return true for characters that have children', () => {
     expect(hasChildrenValues(characters, 'Daenarys')).toBeTruthy();
   });
@@ -261,6 +276,6 @@ xdescribe('Testing challenge 8', () => {
 });
 
 
-function createSnippetWithJQuery(html){
+function createSnippetWithJQuery(html) {
   return cheerio.load(html);
 }
