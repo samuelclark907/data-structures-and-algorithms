@@ -26,7 +26,7 @@ const createServer = () => {
   const app = express();
 
   // Routes go here
-  app.get('/routes', getCurrentEvents );
+  app.get('/events', getCurrentEvents);
   // Solution code here...
 
   var server = app.listen(3301, function () {
@@ -158,7 +158,7 @@ const currentEvents = {
       url: "https://bgr.com/2020/04/13/coronavirus-mask-effectiveness-surgical-how-to/"
     }
   ]
-}
+};
 
 function getCurrentEvents(request, response) {
   // Solution code here...
@@ -169,7 +169,7 @@ function getCurrentEvents(request, response) {
 
 const mapCurrentEvents = () => {
   // Solution code here...
-  let event = currentEvents.news.map (event => {
+  let event = currentEvents.news.map(event => {
     return new Event(event);
   });
   return event;
@@ -195,10 +195,10 @@ Note: You may not use the array's built-in length property.
 
 const countNumberOfElements = (arr) => {
   // Solution code here...
-  let numberOfElements = arr.reduce((count, value, idx){
-    if (value) {count ++}
+  let numberOfElements = arr.reduce((count, value, idx) => {
+    if (value) { count++; }
     return count;
-  })
+  });
   return numberOfElements;
 };
 
@@ -261,9 +261,9 @@ let starWarsData = [{
 
 const returnNames = (arr) => {
   // Solution code here...
-  let names = arr.reduce((name, person, idx){
+  let names = arr.reduce((name, person, idx) => {
 
-  })
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -276,7 +276,7 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 
 const reversedString = (str) => {
   // Solution code here...
-  let 
+
 };
 
 /* ------------------------------------------------------------------------------------------------
