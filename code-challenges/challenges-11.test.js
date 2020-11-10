@@ -52,9 +52,9 @@ Note: if you ever need to validate an email using a regex in practice, the Inter
 
 const validateEmail = (email) => {
   // Solution code here...
-  let regex = 
-  let answer = regex.test(email);
-  return answer;
+  // let regex = 
+  // let answer = regex.test(email);
+  // return answer;
 };
 
 /* ------------------------------------------------------------------------------------------------
