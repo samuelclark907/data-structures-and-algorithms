@@ -41,7 +41,7 @@ For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyv
 const toTitleCase = (arr) => {
   // Solution code here...
   return arr.map(string => {
-    let upCase = string.charAt[0].toUpperCase();
+    let upCase = string.charAt(0).toUpperCase() + string.slice(1);
     return upCase;
   });
 };
@@ -119,9 +119,16 @@ let starWarsData = [{
 
 let biggerThanLuke = (arr) => {
   // Solution code here...
-  return arr.map(char => {
-    if ()
-  })
+  let arrL = [];
+
+  arr.forEach(person => {
+    let luke = arr[0].mass;
+    //console.log('luke\'s mass', lukeMass);
+    if (person.mass > luke) {
+      //console.log(person.name);
+      arrL.push(person.name);
+    }
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -140,6 +147,10 @@ This data could be sorted by name or price.
 
 const sortBy = (property, arr) => {
   // Solution code here...
+  arr.sort( (a, b) => {
+    return a.property > b.property;
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
