@@ -8,15 +8,10 @@ using the 'reduce' method.
 
 E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
-const maxInArray = (arr) => {
+const maxInArray = (arr) => arr.reduce((a, b) => {
+  return Math.max(a, b);
   // Solution code here...
-  let max = arr[0];
-  let num = arr.reduce((acc, val, idx) => {
-    max = arr[idx + 1] > max ? arr[idx + 1] : max;
-    return max;
-  });
-  return num;
-};
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -41,8 +36,15 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
-  // Solution code here..
-  console.log
+
+  // Solution code here...
+  return stores.reduce((originalValue, currentValue) => {
+    return originalValue.map((newValue, index) => {
+      return newValue + currentValue[index];
+
+    });
+  });
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -57,6 +59,11 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 
 const salesData = (hours, data) => {
   // Solution code here...
+  let arr = [];
+  data.forEach((sale, idx) => {
+    arr.push({ 'sales': sale + ' cookies', 'time': hours[idx] });
+  });
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
