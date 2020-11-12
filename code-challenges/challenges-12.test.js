@@ -12,7 +12,6 @@ const maxInArray = (arr) => arr.reduce((a, b) => {
   return Math.max(a, b);
   // Solution code here...
 
-});
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -37,6 +36,7 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
+
   // Solution code here...
   return stores.reduce((originalValue, currentValue) => {
     return originalValue.map((newValue, index) => {
@@ -44,6 +44,7 @@ const grandTotal = (stores) => {
 
     });
   });
+
 };
 
 /* ------------------------------------------------------------------------------------------------
