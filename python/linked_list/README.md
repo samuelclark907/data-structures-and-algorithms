@@ -11,7 +11,7 @@
 - Define a method called toString (or __str__ in Python) which takes in no arguments and returns a string representing all the values in the Linked List, formatted as:
 
 - "{ a } -> { b } -> { c } -> NULL"
-
+CODE CHALL 06
 
 
 # Challenge Summary
@@ -31,3 +31,17 @@ started with append then moved to before and after because they seemed similar.
 
 ## Solution
 ![Solution Image](assets\ll-insertions.png)
+
+CODE CHALL 07
+
+# Challenge Summary
+
+Write a method for the Linked List class which takes a number, k, as a parameter. Return the node’s value that is k from the end of the linked list. You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges.
+## Challenge Description
+<!-- Description of the challenge -->
+
+## Approach & Efficiency
+Stuck to the whiteboard and just step by step wrote the code.
+
+## Solution
+![Solution Image](assets/ll-kth-from-end.png)

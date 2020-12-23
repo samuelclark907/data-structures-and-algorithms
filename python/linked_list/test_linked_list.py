@@ -56,5 +56,11 @@ def test_insertAfter():
     
     
 
-    
+def ll_kth():
+    newone_linked = LinkedList(Node(1))
+    newone_linked.insertAfter(1,3)
+    newone_linked.append(7)
+    assert newone_linked.llkth(0) == 7
+    assert newone_linked.llkth(1) == 3
+    assert newone_linked.llkth(5) == "That value is too big"
 
