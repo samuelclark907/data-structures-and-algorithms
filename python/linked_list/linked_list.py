@@ -39,19 +39,76 @@ class LinkedList:
         return output + "None"
 
 
+    def append(self, value):
+        newnode = Node(value)
+        if self.head:
+            current = self.head
+            while current.next:
+                current = current.next
+            current.next = newnode
+        else:
+            self.head = newnode
+
+
+    def insertBefore(self, value, newVal):
+        current = self.head
+        if current is None:
+            return 
+        newnode = Node(newVal)
+        if current.value == value:
+            newnode.next = current
+            self.head = newnode
+        while current.next:
+            if current.next.value == value:
+                newnode.next = current.next
+                current.next = newnode
+                break
+            current = current.next
+
+
+    def insertAfter(self, value, newVal):
+        current = self.head
+        newnode = Node(newVal)
+        if current.value == value:
+            current.next = newnode
+            current = newnode
+        while current.next:
+            if current.value == value:
+                newnode.next = current.next
+                current.next = newnode
+                break
+            current = current.next
+
+
+
+
+
+
 
 
 
 if __name__ == "__main__":
     new_node = Node(1)
     new_linked = LinkedList()
-    print(new_linked)
+    # print(new_linked)
 
     newone_linked = LinkedList(new_node)
-    newone_linked.insert(2)
-    print(newone_linked.includes(2))
-    print(newone_linked.includes(4))
-    print(newone_linked.head.value)
+    # newone_linked.insert(2)
+    # # newone_linked.insert(4)
+    # # print(newone_linked.includes(2))
+    # # print(newone_linked.includes(4))
+    # # print(newone_linked.head.value)
+    # newone_linked.append(5)
+    # newone_linked.append(8)
+    # newone_linked.append(7)
+    newone_linked.insertBefore(1,6)
+    # print(newone_linked)
+    # newone_linked.insertAfter(6,7)
+    # print(newone_linked)
+    
+    print(newone_linked)
+   
+   
 
 
 # class LinkedList:
