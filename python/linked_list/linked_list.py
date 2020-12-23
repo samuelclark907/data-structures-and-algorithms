@@ -80,6 +80,20 @@ class LinkedList:
             current = current.next
 
 
+    def llkth(self,k):
+        current = self.head
+        counter = 0
+        while current:
+            current = current.next
+            counter += 1
+        if k > counter:
+            return "That value is too big"
+        for i in range(0,counter - k):
+            current = current.next
+        return current.value
+
+
+
 
 
 
