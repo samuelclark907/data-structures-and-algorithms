@@ -11,3 +11,23 @@
 - Define a method called toString (or __str__ in Python) which takes in no arguments and returns a string representing all the values in the Linked List, formatted as:
 
 - "{ a } -> { b } -> { c } -> NULL"
+
+
+
+# Challenge Summary
+
+Features
+.append(value) which adds a new node with the given value to the end of the list
+
+.insertBefore(value, newVal) which add a new node with the given newValue immediately before the first value node
+
+.insertAfter(value, newVal) which add a new node with the given newValue immediately after the first value node
+
+## Challenge Description
+<!-- Description of the challenge -->
+
+## Approach & Efficiency
+started with append then moved to before and after because they seemed similar.
+
+## Solution
+![Solution Image](assets\ll-insertions.png)
