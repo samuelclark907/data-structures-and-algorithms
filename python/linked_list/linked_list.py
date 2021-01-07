@@ -34,7 +34,7 @@ class LinkedList:
         current = self.head
         output = ""
         while current is not None:
-            output += f"{{ {current.value} }} -> "
+            output += f"{{{current.value}}}->"
             current = current.next
         return output + "None"
 
@@ -101,74 +101,38 @@ class LinkedList:
 
 
 
+
+
 if __name__ == "__main__":
-    new_node = Node(1)
-    new_linked = LinkedList()
+    # new_node = Node(1)
+    # new_linked = LinkedList()
     # print(new_linked)
 
-    newone_linked = LinkedList(new_node)
+    # newone_linked = LinkedList(new_node)
     # newone_linked.insert(2)
-    # # newone_linked.insert(4)
-    # # print(newone_linked.includes(2))
-    # # print(newone_linked.includes(4))
-    # # print(newone_linked.head.value)
+    # newone_linked.insert(4)
+    # print(newone_linked.includes(2))
+    # print(newone_linked.includes(4))
+    # print(newone_linked.head.value)
     # newone_linked.append(5)
     # newone_linked.append(8)
     # newone_linked.append(7)
-    newone_linked.insertBefore(1,6)
+    # newone_linked.insertBefore(1,6)
+    # newone_linked.insertAfter(1,3)
     # print(newone_linked)
     # newone_linked.insertAfter(6,7)
     # print(newone_linked)
     
+    
+    # print(newone_linked)
+    # val = newone_linked.llkth(2)
+    # print(val)
+
+
+    newone_linked = LinkedList(Node(1))
+    newone_linked.insertAfter(1,3)
+    newone_linked.append(7)
     print(newone_linked)
+    print(newone_linked.llkth(0) == True)
+
    
-   
-
-
-# class LinkedList:
-#     """
-#     Put docstring here
-#     """
-
-#     def __init__(self):
-#         # initialization here
-#         pass
-
-#     def some_method(self):
-#         # method body here
-#         pass
-
-# class Node:
-
-#     def __init__(self, value, next=None):       
-#         self.value = value
-#         self.next = next 
-
-#     def __str__(self):
-#         return f"{self.value}"
-
-# class LinkedList:
-#     def __init__(self,value=None):
-#         self.head = None
-#         if not value is None:
-#             node = Node(value)
-#             self.head = node
-
-
-#     def insert(self, value):
-#         node = Node(value)
-#         if self.head is not None:
-#             node.next = node.head
-#         node.head = node
-
-
-#     def includes(self, value):
-#         if self.head is None:
-#             print("No Elements")
-#         n = self.head
-#         while n is not None:
-#             if value == n:
-#                 return True
-#             n = n.next
-#         return False
-

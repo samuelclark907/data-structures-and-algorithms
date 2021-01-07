@@ -8,4 +8,4 @@ takes two linked lists as arguments. Zip the two linked lists together into one 
 itterate one then the other
 
 ## Solution
-![Solution Image](assets/ll-zip.jpeg)
+![Solution Image](assets/ll-zip.png)
