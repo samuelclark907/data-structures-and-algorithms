@@ -60,7 +60,10 @@ def ll_kth():
     newone_linked = LinkedList(Node(1))
     newone_linked.insertAfter(1,3)
     newone_linked.append(7)
-    assert newone_linked.llkth(0) == 7
-    assert newone_linked.llkth(1) == 3
-    assert newone_linked.llkth(5) == "That value is too big"
+    newone_linked.append(8)
+    newone_linked.append(4)
+    newone_linked.append(10)
+    assert newone_linked.llkth(0) == 10
+    assert newone_linked.llkth(1) == 4
+    assert newone_linked.llkth(5) == 1
 
