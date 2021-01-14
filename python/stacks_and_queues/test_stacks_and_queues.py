@@ -1,5 +1,5 @@
 import pytest
-from stacks_and_queues import Stack, Node, Queue, InvalidOperationError
+from stacks_and_queues.stacks_and_queues import Stack, Node, Queue, InvalidOperationError
 
 def test_push_onto_empty():
     s = Stack()
@@ -100,7 +100,13 @@ def test_enqueue():
 
 
 def test_dequeue():
-    pass
+    q = Queue()
+    q.enqueue("apple")
+    q.enqueue("banana")
+    q.dequeue()
+    actual = q.front.value
+    expected = "banana"
+    assert actual == expected
 
 
 def test_peek():
