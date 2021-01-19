@@ -44,4 +44,4 @@ Write a method for the Linked List class which takes a number, k, as a parameter
 Stuck to the whiteboard and just step by step wrote the code.
 
 ## Solution
-![Solution Image](assets/ll-kth-from-end.png)
+[Whiteboard](https://docs.google.com/spreadsheets/d/1H4rsaRrtRcLc98GibKyuWQAm5U1o-6M0VMTVp3R6HNc/edit?usp=sharing)
