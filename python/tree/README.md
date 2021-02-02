@@ -17,3 +17,6 @@ O(n) space and time for Binary tree methods
 Binary Tree: pre_order(), in_order(), post_order
 
 Binary Search Tree: add(), contains()
+
+
+https://github.com/samuelclark907/data-structures-and-algorithms/pull/38

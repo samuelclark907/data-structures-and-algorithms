@@ -18,7 +18,6 @@ c.left = f
 
 
 bitree = BinarySearchTree()
-
 bitree.add(10)
 bitree.add(20)
 bitree.add(30)
@@ -38,3 +37,18 @@ def test_contains():
     actual = bitree.contains(10)
     assert expected == actual
     # assert bitree.contains(7)
+
+def test_pre_order():
+    actual = tree.pre_order()
+    expected = ['A', 'B', 'D', 'E', 'C', 'F']
+    assert actual == expected
+
+def test_in_order():
+    actual = tree.in_order()
+    expected = ['D', 'B', 'E', 'A', 'F', 'C']
+    assert actual == expected
+
+def test_post_order():
+    actual = tree.post_order()
+    expected = ['D', 'E', 'B', 'F', 'C', 'A']
+    assert actual == expected
