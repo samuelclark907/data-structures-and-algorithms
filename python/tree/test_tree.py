@@ -24,6 +24,10 @@ bitree.add(30)
 bitree.add(9)
 bitree.add(7)
 
+tritree = BinarySearchTree()
+tritree.add(2)
+
+emptytree = BinarySearchTree()
 
 def test_add():
     assert bitree.root.value == 10
@@ -52,3 +56,9 @@ def test_post_order():
     actual = tree.post_order()
     expected = ['D', 'E', 'B', 'F', 'C', 'A']
     assert actual == expected
+
+def test_single_node():
+    assert tritree.root.value == 2
+
+def test_empty_tree():
+    assert emptytree.root == None
