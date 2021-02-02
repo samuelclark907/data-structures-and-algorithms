@@ -62,3 +62,6 @@ def test_single_node():
 
 def test_empty_tree():
     assert emptytree.root == None
+
+def test_max_value():
+    assert bitree.find_maximum_value() == 30
