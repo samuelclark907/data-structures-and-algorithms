@@ -47,6 +47,21 @@ class BinaryTree:
         traverse(self.root)
         return test_list
 
+    def find_maximum_value(self):
+        _maxv = 0
+        def traverse(node):
+            nonlocal _maxv
+            if node:
+                if node.value > _maxv:
+                    _maxv = node.value
+                traverse(node.left)
+                traverse(node.right)
+    
+        traverse(self.root)
+        print(_maxv)
+        return _maxv
+        
+
 
 class BinarySearchTree(BinaryTree):
     def contains(self, value):
@@ -136,10 +151,12 @@ if __name__ == "__main__":
     
     bitree.add(10)
     bitree.add(20)
+    print(bitree.root.value)
     bitree.add(30)
     bitree.add(9)
-    bitree.add(7)
-    bitree.contains(9)
+    bitree.add(70)
+    # bitree.contains(9)
+    bitree.find_maximum_value()
     # print(bitree.root)
     # print(bitree.root.value)
     # print(bitree.root.left.value)
