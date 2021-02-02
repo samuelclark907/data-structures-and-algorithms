@@ -8,36 +8,44 @@ class Node:
 
 
 class BinaryTree:
-    def __init__(self, root = None):
+    def __init__(self, root=None):
         self.root = root
+        
 
     def pre_order(self):
+        test_list = []
         def traverse(root):
             if not root:
                 return "Tree Empty"
-            print(root.value)
+            # print(root.value)
+            test_list.append(root.value)
             traverse(root.left)
             traverse(root.right)
         traverse(self.root)
+        return test_list
 
     def in_order(self):
+        test_list = []
         def traverse(root):
             if not root:
                 return "Tree Empty"
             
             traverse(root.left)
-            print(root.value)
+            test_list.append(root.value)
             traverse(root.right)
         traverse(self.root)
+        return test_list
 
     def post_order(self):
+        test_list = []
         def traverse(root):
             if not root:
                 return "Tree Empty"
             traverse(root.left)
             traverse(root.right)
-            print(root.value)
+            test_list.append(root.value)
         traverse(self.root)
+        return test_list
 
 
 class BinarySearchTree(BinaryTree):
@@ -96,23 +104,23 @@ class BinarySearchTree(BinaryTree):
         # traverse(root, value)
 
 if __name__ == "__main__":
-    # a = Node("A")
-    # b = Node("B")
-    # c = Node("C")
-    # d = Node("D")
-    # e = Node("E")
-    # f = Node("F")
+    a = Node("A")
+    b = Node("B")
+    c = Node("C")
+    d = Node("D")
+    e = Node("E")
+    f = Node("F")
 
-    # tree = BinaryTree()
-    # a.left = b 
-    # a.right = c
-    # tree.root = a 
-    # b.left = d
-    # b.right = e 
-    # c.left = f 
-    # tree.pre_order()
-    # tree.in_order()
-    # tree.post_order()
+    tree = BinaryTree()
+    a.left = b 
+    a.right = c
+    tree.root = a 
+    b.left = d
+    b.right = e 
+    c.left = f 
+    tree.pre_order()
+    tree.in_order()
+    tree.post_order()
 
     g = Node(2)
     h = Node(4)
