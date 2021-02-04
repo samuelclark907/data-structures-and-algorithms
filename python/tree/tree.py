@@ -60,6 +60,26 @@ class BinaryTree:
         traverse(self.root)
         print(_maxv)
         return _maxv
+
+    def breadth_first(self):
+        new_list =[]
+        if self.root:
+            temp_list = []
+            temp_list.append(self.root)
+            print(temp_list)
+            while temp_list:
+                deq = temp_list.pop()
+                # print("popped number", deq.value)
+                # print(deq.left)
+                new_list.append(deq.value)
+
+                if deq.left:
+                    temp_list.append(deq.left)
+                if deq.right:
+                    temp_list.append(deq.right)
+
+        print(new_list)
+
         
 
 
@@ -150,13 +170,15 @@ if __name__ == "__main__":
     # bitree.add(h)
     
     bitree.add(10)
-    bitree.add(20)
-    print(bitree.root.value)
     bitree.add(30)
+    bitree.add(20)
+    # print(bitree.root.value)
+    
     bitree.add(9)
     bitree.add(70)
     # bitree.contains(9)
-    bitree.find_maximum_value()
+    # bitree.find_maximum_value()
+    bitree.breadth_first()
     # print(bitree.root)
     # print(bitree.root.value)
     # print(bitree.root.left.value)
