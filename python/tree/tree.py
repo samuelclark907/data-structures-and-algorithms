@@ -1,3 +1,4 @@
+from stacks_and_queues import Queue
 print('Hello World')
 
 class Node:
@@ -60,6 +61,25 @@ class BinaryTree:
         traverse(self.root)
         print(_maxv)
         return _maxv
+
+    def breadth_first(self):
+        new_list =[]
+        if self.root:
+            # print(self.root.left.value)
+            que = Queue()
+            que.enqueue(self.root)
+            while not que.is_empty():
+                deq = que.dequeue()
+                # print(deq.value)
+                new_list.append(deq.value)
+
+                if deq.left:
+                    que.enqueue(deq.left)
+                if deq.right:
+                    que.enqueue(deq.right)
+
+        print(new_list)
+
         
 
 
@@ -150,13 +170,15 @@ if __name__ == "__main__":
     # bitree.add(h)
     
     bitree.add(10)
-    bitree.add(20)
-    print(bitree.root.value)
     bitree.add(30)
+    bitree.add(20)
+    # print(bitree.root.value)
+    
     bitree.add(9)
     bitree.add(70)
     # bitree.contains(9)
-    bitree.find_maximum_value()
+    # bitree.find_maximum_value()
+    bitree.breadth_first()
     # print(bitree.root)
     # print(bitree.root.value)
     # print(bitree.root.left.value)
