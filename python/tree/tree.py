@@ -1,3 +1,4 @@
+from stacks_and_queues import Queue
 print('Hello World')
 
 class Node:
@@ -64,19 +65,18 @@ class BinaryTree:
     def breadth_first(self):
         new_list =[]
         if self.root:
-            temp_list = []
-            temp_list.append(self.root)
-            print(temp_list)
-            while temp_list:
-                deq = temp_list.pop()
-                # print("popped number", deq.value)
-                # print(deq.left)
+            # print(self.root.left.value)
+            que = Queue()
+            que.enqueue(self.root)
+            while not que.is_empty():
+                deq = que.dequeue()
+                # print(deq.value)
                 new_list.append(deq.value)
 
                 if deq.left:
-                    temp_list.append(deq.left)
+                    que.enqueue(deq.left)
                 if deq.right:
-                    temp_list.append(deq.right)
+                    que.enqueue(deq.right)
 
         print(new_list)
 
