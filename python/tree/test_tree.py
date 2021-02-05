@@ -1,5 +1,6 @@
 import pytest
 from tree import BinarySearchTree, BinaryTree, Node
+from stacks_and_queues import Queue
 
 a = Node("A")
 b = Node("B")
@@ -65,3 +66,6 @@ def test_empty_tree():
 
 def test_max_value():
     assert bitree.find_maximum_value() == 30
+
+def test_breadth_first():
+    assert bitree.breadth_first() == [10, 9, 30, 20, 70]
