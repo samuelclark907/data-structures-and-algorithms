@@ -1,5 +1,5 @@
 import pytest
-from stacks_and_queues.stacks_and_queues import Stack, Node, Queue, InvalidOperationError
+from stacks_and_queues import Stack, Node, Queue, InvalidOperationError
 
 def test_push_onto_empty():
     s = Stack()
