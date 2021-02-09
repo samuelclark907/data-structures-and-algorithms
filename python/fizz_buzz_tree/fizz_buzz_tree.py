@@ -5,11 +5,11 @@ def fizz_buzz(value):
         # print("FizzBuzz")
         return "FizzBuzz"
     elif value % 5 == 0:
-        # print("Fizz")
-        return "Fizz"
-    elif value % 3 == 0:
         # print("Buzz")
         return "Buzz"
+    elif value % 3 == 0:
+        # print("Fizz")
+        return "Fizz"
     else:
         # print(value)
         return str(value)
