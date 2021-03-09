@@ -1,33 +1,36 @@
-def mergesort(list):
-    n = len(lst)
+def mergesort(merge_list):
+    n = len(merge_list)
     print(n)
     if n > 1:
         mid = int(n / 2)
         print(mid)
-        left = list[0:mid]
-        # left = sorted(left)
-        # print(left)
-        right = list[mid:n]
-        # right = sorted(right)
-        # print(right)
+        left = merge_list[0:mid]
+        right = merge_list[mid:n]
         mergesort(left)
         mergesort(right)
-        merge(left,right,lst)
-    return lst
+        merge(left,right,merge_list)
+    return merge_list
 
-mergesort(list)
+# mergesort(merge_list)
 
-def merge(left,right,lst):
+def merge(left,right,merge_list):
     i = j = k = 0
     while i < len(left) and j < len(right):
         if left[i] < right[j]:
-            lst[k] = left[i]
+            merge_list[k] = left[i]
             i += 1
         else:
-            lst[k] = right[j]
+            merge_list[k] = right[j]
             j += 1
         k += 1
-    if i < len(left):
-        lst[k]
+    while i < len(left):
+        merge_list[k] = left[i]
+        i += 1
+        k += 1
+
+    while j < len(right):
+        merge_list[k] = right[j]
+        j += 1
+        k += 1
 
     
