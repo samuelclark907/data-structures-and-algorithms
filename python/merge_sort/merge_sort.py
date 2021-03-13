@@ -3,7 +3,6 @@ def mergesort(merge_list):
     print(n)
     if n > 1:
         mid = int(n / 2)
-        print(mid)
         left = merge_list[0:mid]
         right = merge_list[mid:n]
         mergesort(left)
