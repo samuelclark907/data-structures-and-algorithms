@@ -15,3 +15,5 @@ hash- hashes the key of a tuple
 get- return the value of a givin key
 set- takes that the hashed key and val and adds it too a hashtable
 contains- checks if the hashtable contains the key and returns true or false
+
+https://github.com/samuelclark907/data-structures-and-algorithms/pull/47
