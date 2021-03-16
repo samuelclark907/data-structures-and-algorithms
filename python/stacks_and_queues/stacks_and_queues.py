@@ -53,6 +53,10 @@ class Queue():
         self.front = None
         self.rear = None
 
+    def __str__(self):
+        for i in Range(Queue):
+            print(i)
+
 
     def enqueue(self, value):
         node = Node(value)
