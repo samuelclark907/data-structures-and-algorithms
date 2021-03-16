@@ -22,7 +22,6 @@ class HashTable:
             self._bucket[hashed_key_index] = LinkedList()
         
         self._bucket[hashed_key_index].add((key, value))
-        
 
 
     def get(self, requested_key):
