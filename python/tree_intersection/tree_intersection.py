@@ -7,19 +7,27 @@ def tree_intersection(tree1,tree2):
     def traverse(root):
         if not root:
             return "Tree Empty"
-        elif tree1.root:    
+        if tree1:    
             treelist1.append(root.value)
             traverse(root.left)
             traverse(root.right)
-        elif not tree1.root:
+    def traverse1(root):
+        if not root:
+            return "Tree Empty"
+        if tree1:    
             treelist2.append(root.value)
-            traverse(root.left)
-            traverse(root.right)            
-
+            traverse1(root.left)
+            traverse1(root.right)         
+    traverse1(tree2.root)
     traverse(tree1.root)
-    traverse(tree2.root)
-    print(treelist1)
-    print(treelist2)
+
+    for item in treelist1:
+        if item in treelist2:
+            intersection.append(item)
+            treelist1.remove(item)
+
+    return intersection
+    
 
 if __name__ == '__main__':
     a = Node("1")
@@ -29,9 +37,9 @@ if __name__ == '__main__':
     e = Node("5")
     f = Node("6")
 
-    g = Node("7")
-    h = Node("8")
-    i = Node("9")
+    g = Node("1")
+    h = Node("6")
+    i = Node("1")
     j = Node("10")
     k = Node("11")
     l = Node("12")
