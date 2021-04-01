@@ -22,20 +22,57 @@ class Graph:
     if self.size() == 0:
       return 'NULL'
     for vert in self._adjacency_list:
-      output.append(vert.value)
+      output.append(vert)
     return output
 
   def get_neighbor(self, node):
     neighbors = self._adjacency_list[node]
     output = []
     for edge in neighbors:
-      lst = []
-      lst.append((edge.vertex.value, edge.weight))
-      output.append(lst)
+      node = []
+      node.append(edge.vertex.value)
+      node.append(edge.weight)
+      tuple_node = tuple(node)
+      output.append(tuple_node)
+      if len(output) == 0:
+        return 'No Neighbors'
     return output
 
   def size(self):
     return len(self._adjacency_list)
+
+  def breadth_first_traversal(self):
+    pass
+  
+  def get_edge(self, graph, list_cities):
+    available = False
+
+    def get_starting_city(city_name):
+      for node in graph.get_node():
+        if node.value == city_name:
+          return node
+      return None
+        
+      return 'City not here'
+
+    start_city = get_starting_city(list_cities[0])
+
+    
+    for i in range(1,len(list_cities)):
+      # print(list_cities[i])
+      end_city = list_cities[i]
+      neighbors = graph.get_neighbor(start_city)
+      for neighbor in neighbors:
+        # print(neighbor)
+        if neighbor[0] == end_city:
+          # print(neighbor[0])
+          # print(end_city)
+          start_city = get_starting_city(end_city)
+          # print(start_city.value)
+        available = True
+    return available
+
+
 
 class Vertex:
   def __init__(self,value):
@@ -48,17 +85,21 @@ class Edge:
 
 if __name__ == '__main__':
     g = Graph()
-    a = g.add_node('a')
-    b = g.add_node('b')
-    c = g.add_node('c')
-    d = g.add_node('d')
+    a = g.add_node('seattle')
+    b = g.add_node('juneau')
+    c = g.add_node('houston')
+    cities = ['seattle', 'juneau', 'houston']
+    # d = g.add_node('d')
     # print(g._adjacency_list)
     # keys = g._adjacency_list.keys()
     # lst = g.get_node()
     # print(lst)
     g.add_edge(a,b)
     # print(edge)
-    g.add_edge(a,c)
-    print(g.get_neighbor(a))
-    neighbors = g.get_neighbor(a)
-    print(neighbors[0][0][0])
+    # g.add_edge(c,b)
+    # print(g.get_node())
+    # print(g.get_neighbor(a))
+    # hus = g.get_neighbor(b)
+    # print(hus[0][0])
+   
+    print(g.get_edge(g,cities))
