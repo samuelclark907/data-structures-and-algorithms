@@ -41,19 +41,30 @@ class Graph:
   def size(self):
     return len(self._adjacency_list)
 
-  def breadth_first_traversal(self):
-    pass
+  def breadth_first(self, vertex):
+    breadth = []
+    visited = []
+
+    breadth.append(vertex)
+    visited.append(vertex.value)
+
+    while len(breadth) != 0:
+        node = breadth.pop()
+        neighbor = self._adjacency_list[node]
+        for edge in neighbor:
+            if edge.vertex.value not in visited:
+                visited.append(edge.vertex.value)
+                breadth.append(edge.vertex)
+    return visited
+    
   
   def get_edge(self, graph, list_cities):
-    available = False
 
     def get_starting_city(city_name):
       for node in graph.get_node():
         if node.value == city_name:
           return node
       return None
-        
-      return 'City not here'
 
     start_city = get_starting_city(list_cities[0])
 
@@ -62,15 +73,16 @@ class Graph:
       # print(list_cities[i])
       end_city = list_cities[i]
       neighbors = graph.get_neighbor(start_city)
+      # print(end_city)
       for neighbor in neighbors:
-        # print(neighbor)
+        if neighbor[0] != end_city:
+          return False
         if neighbor[0] == end_city:
-          # print(neighbor[0])
-          # print(end_city)
           start_city = get_starting_city(end_city)
-          # print(start_city.value)
-        available = True
-    return available
+          print(start_city.value)
+          available = True
+          break
+      return available
 
 
 
@@ -96,7 +108,7 @@ if __name__ == '__main__':
     # print(lst)
     g.add_edge(a,b)
     # print(edge)
-    # g.add_edge(c,b)
+    # g.add_edge(b,c)
     # print(g.get_node())
     # print(g.get_neighbor(a))
     # hus = g.get_neighbor(b)
