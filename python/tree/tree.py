@@ -153,9 +153,9 @@ if __name__ == "__main__":
     b.left = d
     b.right = e 
     c.left = f 
-    tree.pre_order()
-    tree.in_order()
-    tree.post_order()
+    print(tree.pre_order())
+    print(tree.in_order())
+    print(tree.post_order())
 
     g = Node(2)
     h = Node(4)
@@ -178,7 +178,7 @@ if __name__ == "__main__":
     bitree.add(70)
     # bitree.contains(9)
     # bitree.find_maximum_value()
-    bitree.breadth_first()
+    # bitree.breadth_first()
     # print(bitree.root)
     # print(bitree.root.value)
     # print(bitree.root.left.value)
